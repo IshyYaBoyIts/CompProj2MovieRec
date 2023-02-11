@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
       <ButtonAppBar/>
         <div className='app'> 
-          <Container>Movie app
+          <Container>
             <Routes>
               <Route exact path="/" element={ <Trending /> } />
               <Route path="/Movies" element={ <Movies /> } />

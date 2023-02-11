@@ -43,8 +43,8 @@ export default function MenuAppBar() {
       </FormGroup>
       <AppBar position="fixed">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            🎬 QuickPicks 📺
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} onClick={()=>window.scroll(0, 0)} className="header">
+            QuickPicks 📺
           </Typography>
           {auth && (
             <div>
