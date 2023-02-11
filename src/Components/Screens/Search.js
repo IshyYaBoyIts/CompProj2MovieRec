@@ -1,8 +1,10 @@
 import React from "react"
 // import { useEffect, useState } from "react";
+
 const Search = () => {
     return (
-        <div className="AppScreen">
+        <div>
+            <span className="pageSearch">Trending</span>
             <h1>Search</h1>
         </div>
     )

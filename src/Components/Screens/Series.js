@@ -3,7 +3,8 @@ import React from "react"
 
 const Series = () => {
     return (
-        <div className="AppScreen">
+        <div>
+            <span className="pageSeries">Trending</span>
             <h1>Series</h1>
         </div>
     )

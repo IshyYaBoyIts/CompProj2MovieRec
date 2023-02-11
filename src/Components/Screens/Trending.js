@@ -3,7 +3,8 @@ import React from "react"
 
 const Trending = () => {
     return (
-        <div className="AppScreen">
+        <div>
+            <span className="pageTrending">Trending</span>
             <h1>Trending</h1>
         </div>
     )

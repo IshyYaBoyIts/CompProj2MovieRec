@@ -1,9 +1,9 @@
 import './App.css';
 import FixedBottomNavigation from './Components/Navigation/NavBar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Trending from './Components/Screens/Trending.js';
-import Movies from './Components/Screens/Movies.js';
-import Series from './Components/Screens/Series.js';
+import Trending from './Components/Screens/Trending';
+import Movies from './Components/Screens/Movies';
+import Series from './Components/Screens/Series';
 import Search from '@mui/icons-material/Search';
 import ButtonAppBar from './Components/Navigation/MenuBar';
 import { Container } from '@mui/material';
@@ -14,13 +14,13 @@ function App() {
   <>
     <BrowserRouter>
       <ButtonAppBar/>
-        <div className='app'>
-          <Container>
+        <div className='app'> 
+          <Container>Movie app
             <Routes>
-              <Route exact path="/" component={ <Trending /> } />
-              <Route path="/Movies" component={ <Movies /> } />
-              <Route path="/Series" component={ <Series /> } />
-              <Route path="/Search" component={ <Search /> } />
+              <Route exact path="/" element={ <Trending /> } />
+              <Route path="/Movies" element={ <Movies /> } />
+              <Route path="/Series" element={ <Series /> } />
+              <Route path="/Search" element={ <Search /> } />
               </Routes>
           </Container>
         </div>
