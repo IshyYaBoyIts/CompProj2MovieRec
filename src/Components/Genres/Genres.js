@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
 import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
-import { spacing } from '@mui/system';
 
 const Genres = ({
     selectedGenres,

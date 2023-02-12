@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Trending from './Components/Screens/Trending';
 import Movies from './Components/Screens/Movies';
 import Series from './Components/Screens/Series';
-import Search from '@mui/icons-material/Search';
+import Search from './Components/Screens/Search';
 import ButtonAppBar from './Components/Navigation/MenuBar';
 import { Container } from '@mui/material';
 
