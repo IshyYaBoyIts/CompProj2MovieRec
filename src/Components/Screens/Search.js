@@ -43,6 +43,7 @@ const Search = () => {
     useEffect(() =>{
         window.scroll(0, 0);
         fetchSearch()
+        console.log(content)
         // eslint-disable-next-line
         }, [type, page])
 
@@ -90,8 +91,8 @@ const Search = () => {
                   />
                 ))}
                 {searchText &&
-                !content &&
-                (type ? <h2>No Series Found</h2> : <h2>No Movies Found</h2>)}
+                content.length ===0 &&
+                (type ? <h2>No TV Series Found</h2> : <h2>No Movies Found</h2>)}
             </div>
             {numOfPages > 1 && (
               <CustomPagination setPage={setPage} numOfPages={numOfPages} />
