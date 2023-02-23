@@ -6,7 +6,7 @@ import './SingleContent.css'
 const SingleContent = ({id, poster, title, date, media_type, vote_average,}) => {
     return (
         <ContentModal media_type={media_type} id={id}>
-            <Badge badgeContent={vote_average} color={vote_average>6?"primary" : "secondary"} />
+            <Badge badgeContent={vote_average} color={vote_average>6?"primary" : "secondary"} className='badge'/>
             <img className="poster" src={ poster? `${img_300}/${poster}` : unavailable } alt={title}/>
             <b className="title">{title}</b>
             <span className="subTitle">
