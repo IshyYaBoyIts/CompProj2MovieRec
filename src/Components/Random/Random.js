@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react"
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import axios from 'axios';
 import { img_500, unavailable, unavailableLandscape } from "../Config/config";
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import "./ContentModal.css";
+import ShuffleOnIcon from '@mui/icons-material/ShuffleOn';
+import "./Random.css";
 import Carousel from "../Carousel/Carousel";
+import { Container } from "@mui/material";
+import Button from '@mui/material/Button';
 
 const style = {
     position: 'absolute',
@@ -23,7 +23,6 @@ const style = {
 export default function TransitionsModal({ children, media_type, id }) {
     const [content, setContent] = useState();
     const [video, setVideo] = useState();
-
 
     const fetchData = async () => {
         const { data } = await axios.get(
@@ -50,16 +49,9 @@ export default function TransitionsModal({ children, media_type, id }) {
 
     return (
         <>
-        <div
-            className="media"
-            style={{ cursor: "pointer" }}
-            color="inherit"
-            onClick={handleOpen}
-        >
-            {children}
-        </div>
     <div>
-        <Box sx={style}>
+        <Container sx={style} className='RandomBox'>
+            <span className="pageTitle">Random Quick Pick</span>
         {content && (
             <div className="ContentModal">
                 <img
@@ -100,21 +92,25 @@ export default function TransitionsModal({ children, media_type, id }) {
 
                 <div>
                     <Carousel id={id} media_type={media_type} />
-                </div>
-
-                <Button
-                    variant="contained"
-                    startIcon={<YouTubeIcon />}
-                    color="secondary"
-                    target="__blank"
-                    href={`https://www.youtube.com/watch?v=${video}`}
-                >
-                    Watch the Trailer
-                </Button>
+                </div>   
                 </div>
             </div>
         )}
-        </Box>
+        <span>
+        <Button
+            fullWidth
+            value='Submit'
+            variant="contained"
+            startIcon={<ShuffleOnIcon />}
+            color="secondary"
+            target="__blank"
+            onClick={fetchData}
+            width="fit"
+        >
+            New Random Movie 
+        </Button>
+        </span>
+        </Container>
         </div>
         </>
     );
