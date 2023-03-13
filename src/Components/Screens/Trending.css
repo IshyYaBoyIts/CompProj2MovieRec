@@ -5,7 +5,7 @@
     justify-content: space-around;
 
   }
-  .random{
+  /* .random{
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -13,4 +13,4 @@
     padding-top: 60vh;
     padding-bottom: 45px;
     overflow-y: scroll;
-  }
+  } */

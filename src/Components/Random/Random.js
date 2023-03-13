@@ -6,36 +6,53 @@ import "./Random.css";
 import Carousel from "../Carousel/Carousel";
 import { Container } from "@mui/material";
 import Button from '@mui/material/Button';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '75%',
+    position: 'relative',
+    // top: '50%',
+    // left: '50%',
+    // transform: 'translate(-50%, -50%)',
+    width: '90%',
     bgcolor: '#282c34',
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
     
+    
 };
 
-export default function TransitionsModal({ children, media_type, id }) {
+export default function TransitionsModal({media_type, id }) {
     const [content, setContent] = useState();
     const [video, setVideo] = useState();
+    const [mtype, setMType] = useState();
+    const [rID, setrID] = useState();
 
     const fetchData = async () => {
+        var randomID = Math.floor(Math.random() * 100)
+        var flip = Math.random()
+        var mOrtv = "tv"
+        if (flip > 0.5){
+            mOrtv = "movie"
+        }else{
+            mOrtv = "tv"
+        }
+        const mtype = mOrtv;
+        const rID = randomID;
+        // media_type={mOrtv}id={randomID}
         const { data } = await axios.get(
-        `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+        `https://api.themoviedb.org/3/${mtype}/${rID}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
         );
 
         setContent(data);
+        setMType(mOrtv);
+        setrID(randomID)
       // console.log(data);
     };
 
     const fetchVideo = async () => {
         const { data } = await axios.get(
-        `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+        `https://api.themoviedb.org/3/${mtype}/${rID}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
         );
 
         setVideo(data.results[0]?.key);
@@ -72,7 +89,7 @@ export default function TransitionsModal({ children, media_type, id }) {
                 alt={content.name || content.title}
                 className="ContentModal__landscape"
             />
-                <div className="ContentModal__about">
+                <div className="ContentModal__about" >
                 <span className="ContentModal__title">
                     {content.name || content.title} (
                     {(
@@ -91,8 +108,17 @@ export default function TransitionsModal({ children, media_type, id }) {
                 </span>
 
                 <div>
-                    <Carousel id={id} media_type={media_type} />
-                </div>   
+                    <Carousel id={rID} media_type={mtype} />
+                </div>  
+                <Button
+                    variant="contained"
+                    startIcon={<YouTubeIcon />}
+                    color="secondary"
+                    target="__blank"
+                    href={`https://www.youtube.com/watch?v=${video}`}
+                >
+                    Watch the Trailer
+                </Button> 
                 </div>
             </div>
         )}

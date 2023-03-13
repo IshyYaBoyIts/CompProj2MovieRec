@@ -9,14 +9,7 @@ import RandomElement from "../Random/Random"
 const Trending = () => {
   const [page, setPage] = useState(1)
   const [content, setContent] = useState([])
-  var randomID = Math.floor(Math.random() * 100)
-  var flip = Math.random()
-  var mOrtv = "tv"
-  if (flip > 0.5){
-    mOrtv = "movie"
-  }else{
-    mOrtv = "tv"
-  }
+
 
   const fetchTrending = async () =>{
     const{ data } = await axios.get(
@@ -34,7 +27,7 @@ const Trending = () => {
       <div>
         <span className="pageTitle">Trending</span>
           <div className="random">
-            <RandomElement media_type={mOrtv}id={randomID}/>
+            <RandomElement />
           </div>
           <span className="pageTitle">More movies</span>
           <div className="trending">
