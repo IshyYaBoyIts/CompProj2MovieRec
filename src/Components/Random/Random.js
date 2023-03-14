@@ -29,25 +29,17 @@ export default function TransitionsModal({media_type, id }) {
     const [rID, setrID] = useState();
 
     const fetchData = async () => {
-        var randomID = Math.floor(Math.random() * 100)
-        var flip = Math.random()
-        var mOrtv = "tv"
-        if (flip > 0.5){
-            mOrtv = "movie"
-        }else{
-            mOrtv = "tv"
-        }
-        const mtype = mOrtv;
-        const rID = randomID;
+        
         // media_type={mOrtv}id={randomID}
         const { data } = await axios.get(
         `https://api.themoviedb.org/3/${mtype}/${rID}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
         );
 
         setContent(data);
-        setMType(mOrtv);
-        setrID(randomID)
+
       // console.log(data);
+        console.log("data" + mtype)
+        console.log("data" + rID)
     };
 
     const fetchVideo = async () => {
@@ -56,6 +48,8 @@ export default function TransitionsModal({media_type, id }) {
         );
 
         setVideo(data.results[0]?.key);
+        console.log("vid" + mtype)
+        console.log("vid" + rID)
     };
 
     useEffect(() => {
@@ -108,7 +102,7 @@ export default function TransitionsModal({media_type, id }) {
                 </span>
 
                 <div>
-                    <Carousel id={rID} media_type={mtype} />
+                    <Carousel id={rID} media_type={mtype} /> 
                 </div>  
                 <Button
                     variant="contained"
@@ -130,7 +124,24 @@ export default function TransitionsModal({media_type, id }) {
             startIcon={<ShuffleOnIcon />}
             color="secondary"
             target="__blank"
-            onClick={fetchData}
+            onClick={() =>{
+                var randomID = Math.floor(Math.random() * 100)
+                var flip = Math.random()
+                var mOrtv = "tv"
+                if (flip > 0.5){
+                    mOrtv = "movie"
+                }else{
+                    mOrtv = "tv"
+                }
+                const mtype = mOrtv;
+                const rID = randomID;
+                
+                setMType(mOrtv);
+                setrID(randomID)
+
+                fetchData();
+                fetchVideo();
+            }}
             width="fit"
         >
             New Random Movie 
