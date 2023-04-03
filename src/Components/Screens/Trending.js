@@ -31,15 +31,11 @@ const Trending = () => {
           </div>
           <span className="pageTitle">More movies</span>
           <div className="trending">
-            {content && content.map((c) => 
-            <SingleContent className="Content" key={c.id}
-            id={c.id}
-            poster={c.poster_path}
-            title={c.title || c.name}
-            date={c.first_air_date || c.release_date}
-            media_type={c.media_type}
-            vote_average={c.vote_average}/>
-            )}
+          {content.length > 0 ?
+          content.map((c) => 
+          <SingleContent class="Content" key={c.id} movie={c} />
+          ) : <div>No results found.</div>
+          }
           </div>
           <CustomPagination setPage={setPage} />
       </div>

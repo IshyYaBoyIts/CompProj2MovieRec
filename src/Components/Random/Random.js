@@ -52,11 +52,20 @@ export default function TransitionsModal({media_type, id }) {
         console.log("vid" + rID)
     };
 
-    useEffect(() => {
+    const handleClick = () => {
+        const randomID = Math.floor(Math.random() * 100);
+        const flip = Math.random();
+        let mOrtv = "tv";
+        if (flip > 0.5){
+            mOrtv = "movie";
+        } else {
+            mOrtv = "tv";
+        }
+        setMType(mOrtv);
+        setrID(randomID);
         fetchData();
         fetchVideo();
-      // eslint-disable-next-line
-    }, []);
+    };
 
     return (
         <>
@@ -124,24 +133,7 @@ export default function TransitionsModal({media_type, id }) {
             startIcon={<ShuffleOnIcon />}
             color="secondary"
             target="__blank"
-            onClick={() =>{
-                var randomID = Math.floor(Math.random() * 100)
-                var flip = Math.random()
-                var mOrtv = "tv"
-                if (flip > 0.5){
-                    mOrtv = "movie"
-                }else{
-                    mOrtv = "tv"
-                }
-                const mtype = mOrtv;
-                const rID = randomID;
-                
-                setMType(mOrtv);
-                setrID(randomID)
-
-                fetchData();
-                fetchVideo();
-            }}
+            onClick={handleClick}
             width="fit"
         >
             New Random Movie 

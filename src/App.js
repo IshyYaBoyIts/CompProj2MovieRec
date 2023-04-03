@@ -1,33 +1,40 @@
-import './App.css';
-import FixedBottomNavigation from './Components/Navigation/NavBar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Trending from './Components/Screens/Trending';
-import Movies from './Components/Screens/Movies';
-import Series from './Components/Screens/Series';
-import Search from './Components/Screens/Search';
-import ButtonAppBar from './Components/Navigation/MenuBar';
-import { Container } from '@mui/material';
-
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Container } from "@mui/material";
+import GlobalProvider from "./Context/Globalstate";
+import ButtonAppBar from "./Components/Navigation/MenuBar";
+import FixedBottomNavigation from "./Components/Navigation/NavBar";
+import Trending from "./Components/Screens/Trending";
+import Movies from "./Components/Screens/Movies";
+import Series from "./Components/Screens/Series";
+import Search from "./Components/Screens/Search";
+import { Watchlist } from "./Components/Screens/Watchlist";
+import { Watched } from "./Components/Screens/Watched";
+import { Add } from "./Components/Screens/Add";
 
 function App() {
   return (
-  <>
-    <BrowserRouter>
-      <ButtonAppBar/>
-        <div className='app'> 
-          <Container>
-            <Routes>
-              <Route exact path="/" element={ <Trending /> } />
-              <Route path="/Movies" element={ <Movies /> } />
-              <Route path="/Series" element={ <Series /> } />
-              <Route path="/Search" element={ <Search /> } />
+    <>
+      <BrowserRouter>
+        <GlobalProvider>
+          <ButtonAppBar />
+          <div className="app">
+            <Container>
+              <Routes>
+                <Route exact path="/" element={<Trending />} />
+                <Route path="/Movies" element={<Movies />} />
+                <Route path="/Series" element={<Series />} />
+                <Route path="/Search" element={<Search />} />
+                <Route path="/Watched" element={<Watched />} />
+                <Route path="/Watchlist" element={<Watchlist />} />
               </Routes>
-          </Container>
-        </div>
-        <FixedBottomNavigation/>
+            </Container>
+          </div>
+          <FixedBottomNavigation />
+        </GlobalProvider>
       </BrowserRouter>
-  </>
-  )
+    </>
+  );
 }
 
 export default App;

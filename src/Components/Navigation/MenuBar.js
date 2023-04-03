@@ -1,4 +1,7 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
+import { Link } from "react-router-dom";
+import { Watchlist } from '../Screens/Watchlist';
+import { Watched } from '../Screens/Watched';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,6 +13,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+
 
 export default function MenuAppBar() {
   const [auth, setAuth] = React.useState(true);
@@ -42,6 +46,7 @@ export default function MenuAppBar() {
         />
       </FormGroup>
       <AppBar position="fixed">
+        
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} onClick={()=>window.scroll(0, 0)} className="header">
             QuickPicks 📺
