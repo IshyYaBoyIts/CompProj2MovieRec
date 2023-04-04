@@ -34,24 +34,24 @@ const Series = () => {
             <div>
             <span className="pageTitle">Discover TV Series</span>
             <Genres
-              type="tv"
-              selectedGenres={selectedGenres}
-              setSelectedGenres={setSelectedGenres}
-              genres={genres}
-              setGenres={setGenres}
-              setPage={setPage}
+                type="tv"
+                selectedGenres={selectedGenres}
+                setSelectedGenres={setSelectedGenres}
+                genres={genres}
+                setGenres={setGenres}
+                setPage={setPage}
             />
             <div className="trending">
-          {content.length > 0 ?
-          content.map((c) => 
-          <SingleContent class="Content" key={c.id} movie={c} />
-          ) : <div>No results found.</div>
-          }
-          </div>
+            {content.length > 0 ?
+            content.map((c) => 
+            <SingleContent class="Content" key={c.id} movie={c} />
+            ) : <div>No results found.</div>
+            }
+            </div>
             {numOfPages > 1 && (
-              <CustomPagination setPage={setPage} numOfPages={numOfPages} />
+                <CustomPagination setPage={setPage} numOfPages={numOfPages} />
             )}
-          </div>
+            </div>
         )
     }
 export default Series;
