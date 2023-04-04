@@ -42,19 +42,12 @@ const Series = () => {
               setPage={setPage}
             />
             <div className="trending">
-              {content &&
-                content.map((c) => (
-                  <SingleContent
-                    key={c.id}
-                    id={c.id}
-                    poster={c.poster_path}
-                    title={c.title || c.name}
-                    date={c.first_air_date || c.release_date}
-                    media_type="tv"
-                    vote_average={c.vote_average}
-                  />
-                ))}
-            </div>
+          {content.length > 0 ?
+          content.map((c) => 
+          <SingleContent class="Content" key={c.id} movie={c} />
+          ) : <div>No results found.</div>
+          }
+          </div>
             {numOfPages > 1 && (
               <CustomPagination setPage={setPage} numOfPages={numOfPages} />
             )}
