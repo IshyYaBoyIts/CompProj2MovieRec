@@ -10,9 +10,6 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const style = {
     position: 'relative',
-    // top: '50%',
-    // left: '50%',
-    // transform: 'translate(-50%, -50%)',
     width: '90%',
     bgcolor: '#282c34',
     border: '2px solid #000',

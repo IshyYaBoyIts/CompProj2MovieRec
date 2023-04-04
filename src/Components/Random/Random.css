@@ -2,6 +2,7 @@
 
 .RandomBox{
   position: relative;
+  margin-top: 50px;
 }
 
 .ContentModal__landscape {
