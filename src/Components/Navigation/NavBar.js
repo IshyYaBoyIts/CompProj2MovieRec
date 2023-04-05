@@ -10,8 +10,6 @@ import MovieIcon from '@mui/icons-material/Movie';
 import TvIcon from '@mui/icons-material/Tv';
 import SearchIcon from '@mui/icons-material/Search';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import VisibilityIcon from '@mui/icons-material/Visibility';
 
 
 export default function FixedBottomNavigation() {
@@ -24,16 +22,14 @@ export default function FixedBottomNavigation() {
     else if (value === 1) navigate("/Movies");
     else if (value === 2) navigate("/Series");
     else if (value === 3) navigate("/Search");
-    else if (value === 4) navigate("/Watchlist");
-    else if (value === 5) navigate("/Watched");
 
   }, [value, navigate]);
 
 
 
   return (
-    <Box sx={{ pb: 7 }} ref={ref} >
-      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} style={{zIndex:1}}>
+    <Box sx={{ pb: 7 }} ref={ref}>
+      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
         <BottomNavigation
           showLabels
           value={value}
@@ -56,14 +52,6 @@ export default function FixedBottomNavigation() {
           <BottomNavigationAction 
             label="Search" 
             icon={<SearchIcon />} 
-            />
-            <BottomNavigationAction 
-            label="Watch List" 
-            icon={<VisibilityOffIcon />} 
-            />
-            <BottomNavigationAction 
-            label="Watched" 
-            icon={<VisibilityIcon />} 
             />
         </BottomNavigation>
       </Paper>

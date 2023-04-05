@@ -6,8 +6,8 @@
   min-height: 100vh;
   background-color: #39445a;
   color: white;
-  padding-top: 40px;
-  padding-bottom: 60px;
+  padding-top: 130px;
+  padding-bottom: 70px;
 }
 
 @media (max-width: 700px) {
@@ -16,23 +16,13 @@
   }
 }
 
-.pageTitle {
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  font-family: "Montserrat", sans-serif;
-  font-size: 2vw;
-  padding: 8px;
-  border-radius: 50px;
-  color: rgb(0, 0, 0);
+.appScreen {
+  min-height: 100vh;
+  background-color: #0642b9;
+  color: white;
+  padding-top: 130px;
+  padding-bottom: 70px;
 }
-
-@media (max-width: 1000px) {
-  .pageTitle {
-    font-size: 6.4vw;
-  }
+h1 {
+  color: red;
 }
-.space {
-  padding: 50px;
-}
-
