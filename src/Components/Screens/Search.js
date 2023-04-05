@@ -7,6 +7,7 @@ import { green, purple } from '@mui/material/colors';
 import SearchIcon from '@mui/icons-material/Search';
 import SingleContent from "../SingleContent/SingleContent";
 import CustomPagination from "../Pagination/CustomPagination";
+import './Trending.css';
 
 const Search = () => {
 

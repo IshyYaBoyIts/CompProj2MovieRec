@@ -22,7 +22,7 @@
   justify-content: center;
   font-family: "Montserrat", sans-serif;
   font-size: 2vw;
-  padding: 4px;
+  padding: 8px;
   border-radius: 50px;
   color: rgb(0, 0, 0);
 }
@@ -31,5 +31,8 @@
   .pageTitle {
     font-size: 6.4vw;
   }
+}
+.space {
+  padding: 50px;
 }
 

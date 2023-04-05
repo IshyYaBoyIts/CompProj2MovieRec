@@ -4,14 +4,16 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-self: center;
+    margin-top: ;
 
   }
-  /* .random{
-    position: relative;
+  .pageTitle {
+    text-transform: uppercase;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding-top: 60vh;
-    padding-bottom: 45px;
-    overflow-y: scroll;
-  } */
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2vw;
+    /* padding: 2px; */
+    border-radius: 50px;
+    color: rgb(0, 0, 0);
+  }

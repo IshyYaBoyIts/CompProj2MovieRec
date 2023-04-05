@@ -10,7 +10,6 @@ import Series from "./Components/Screens/Series";
 import Search from "./Components/Screens/Search";
 import { Watchlist } from "./Components/Screens/Watchlist";
 import { Watched } from "./Components/Screens/Watched";
-import { Add } from "./Components/Screens/Add";
 
 function App() {
   return (
@@ -18,6 +17,7 @@ function App() {
       <BrowserRouter>
         <GlobalProvider>
           <ButtonAppBar />
+          <div className="space"></div>
           <div className="app">
             <Container>
               <Routes>

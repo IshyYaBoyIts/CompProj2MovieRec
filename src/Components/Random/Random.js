@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import axios from 'axios';
 import { img_500, unavailable, unavailableLandscape } from "../Config/config";
-import ShuffleOnIcon from '@mui/icons-material/ShuffleOn';
 import "./Random.css";
 import Carousel from "../Carousel/Carousel";
 import { Container } from "@mui/material";
@@ -127,13 +126,12 @@ export default function TransitionsModal({media_type, id }) {
             fullWidth
             value='Submit'
             variant="contained"
-            startIcon={<ShuffleOnIcon />}
             color="secondary"
             target="__blank"
             onClick={handleClick}
             width="fit"
         >
-            New Random Movie 
+            Click me for a new random movie 
         </Button>
         </span>
         </Container>
