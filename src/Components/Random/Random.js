@@ -11,7 +11,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 const style = {
     position: 'relative',
     width: '90%',
-    bgcolor: '#282c34',
+    bgcolor: '#94969b',
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,

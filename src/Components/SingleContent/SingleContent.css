@@ -4,7 +4,7 @@
     width: 200px;
     padding: 5px;
     margin: 5px 0;
-    background-color: #282c34;
+    background-color: #94969b;
     border-radius: 10px;
     position: relative;
     font-family: "Montserrat", sans-serif;
@@ -12,7 +12,7 @@
   
   .media:hover {
     background-color: white;
-    color: black;
+    color: rgb(12, 11, 11);
   }
   
   @media (max-width: 550px) {
